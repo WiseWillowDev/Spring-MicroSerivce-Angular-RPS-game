@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<link th:replace="fragments/bootstrap :: bootstrap"></link>
+
+</head>
+<body>
+	<div class="container">
+		<div th:replace="fragments/Navbar :: Navbar"></div>
+
+		<h1>Create a New User</h1>
+
+		<form th:action="@{/CreateNewUser}" th:object="${user}" method="post">
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Your name...."
+					th:field="*{name}" /> 
+					<label th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="validation-message"></label>
+
+			</div>
+			<button class="btn btn-primary">Enter at your own Risk</button>
+
+		</form>
+
+
+	</div>
+
+</body>
+</html>

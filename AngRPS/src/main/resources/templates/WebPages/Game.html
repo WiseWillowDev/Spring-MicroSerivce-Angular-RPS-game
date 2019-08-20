@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<link th:replace="fragments/bootstrap :: bootstrap"></link>
+
+</head>
+<body>
+<div class="container">
+	<div th:replace="fragments/Navbar :: Navbar"></div>
+
+<h1> Your here to Play some Rock paper Scissors </h1>
+<div th:text="${user.name}"></div>
+<form th:action="@{'/result/{id}'(id=${user.id})}" method="post" th:object="${game}">
+<div>
+ <input type="radio" value="Rock" name="game" th:field="*{humanChoice}">
+  <label for="Rock">Rock</label>
+  </div>
+  <div>
+ <input type="radio" value="Paper" name="game" th:field="*{humanChoice}" >
+  <label for="Paper">Paper</label>
+  </div>
+  <div>
+ <input type="radio" value="Scissors" name="game" th:field="*{humanChoice}">
+  <label for="Scissors">Scissors</label>
+  </div>
+  <Button type = "Submit">Wonder what happens</Button>
+</form>
+
+</div>
+
+</body>
+</html>

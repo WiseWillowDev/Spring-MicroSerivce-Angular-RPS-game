@@ -1,0 +1,14 @@
+<app-new-user></app-new-user>
+<h1> heres a list of users</h1>
+<div *ngFor = "let user of users">
+
+    <p> id: {{ user.id }}</p>
+    <p> userName: {{ user.name }}</p>
+    <p> userWins: {{ user.wins }}</p>
+    <p> userLossess: {{ user.losses }}</p>
+    <p> UserTotalGames:{{ user.totalGames }}</p>
+    <p> UserWinPercentage{{ user.winPercent }}</p>
+    <a routerLink = "/user/{{ user.id }}" class="btn btn-info">Click to play him</a>
+    <hr>
+</div>
+

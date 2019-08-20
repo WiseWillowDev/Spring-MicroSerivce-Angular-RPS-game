@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<link th:replace="fragments/bootstrap :: bootstrap"></link>
+
+</head>
+<body background = "https://www.freepik.com/free-vector/abstract-blue-geometric-shapes-background_3123475.html">
+<div class="container">
+	<div th:replace="fragments/Navbar :: Navbar"></div>
+
+<h1>Rock Paper Scissors in Progress</h1>
+
+<a class="btn btn-primary" th:href="@{/CreateNewUser}">Create a new User</a>
+
+<!-- <a class="btn btn-primary" th:href="@{/playGame}">Play some Rock Paper Scissors</a>
+ -->
+ <h3>All of our Users</h3>
+	<div th:each="user:${users}">
+	<div th:text="*{user.name}"></div>
+	<form th:action="@{'/playGame/{id}'(id=${user.id})}" method = "get">
+		<button>Play as this user</button>
+	</form>
+	</div>
+
+</div>
+
+</body>
+</html>

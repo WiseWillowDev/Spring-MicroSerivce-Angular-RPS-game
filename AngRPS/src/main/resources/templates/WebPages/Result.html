@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<link th:replace="fragments/bootstrap :: bootstrap"></link>
+
+</head>
+<body>
+<div class="container">
+	<div th:replace="fragments/Navbar :: Navbar"></div>
+
+<h1> Your Results for your round </h1>
+<h3> <span th:text="${user.name}"></span>, Here are your Results</h3>
+<h4>Here was your choice: <span th:text="${game.humanChoice}"></span></h4>
+<h4>Here was the computers choice: <span th:text="${game.compChoice}"></span></h4>
+<h1><span th:text="${result}"></span></h1>
+<h4>Your total wins are: <span th:text="${totalWins}"></span></h4>
+<h4>Your total losses are: <span th:text="${totalLose}"></span></h4>
+
+<a th:href="@{'/playGame/{id}'(id=${user.id})}" class="btn btn-danger">Play again?</a>
+
+</div>
+
+</body>
+</html>
