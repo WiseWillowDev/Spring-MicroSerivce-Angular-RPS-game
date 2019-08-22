@@ -1,9 +1,15 @@
 <p>play-game works!</p>
 
+<p>Your total Running Wins and Losses</p>
+<h3> wins: {{ user.wins }}</h3>
+<h3> lossess: {{ user.losses }}</h3>
+<h3> total Games: {{ user.totalGames }}</h3>
 <div>
     <input #Choice type=text>
     <button (click)="addGame(Choice.value)">Add</button>
 
 </div>
 <p> Your Choice: {{ userChoice }} </p>
+<p> Comp Choice: {{ game.compChoice }}</p>
+<p> did you win? {{ game.userWin }}</p>
 <!-- <app-user-games></app-user-games> -->

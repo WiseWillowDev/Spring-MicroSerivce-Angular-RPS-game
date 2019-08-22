@@ -32,7 +32,7 @@ export class GameService {
    }
 
    getLastGameByUser(id:number): Observable<Game> {
-     return this.http.get<Game>(this.gameApi + "lastGame/" + id);
+     return this.http.get<Game>(this.gameApi + "/lastGame/" + id);
    }
 
 }
