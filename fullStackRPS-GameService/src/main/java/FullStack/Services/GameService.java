@@ -52,8 +52,8 @@ public class GameService {
 	
 	public List<Game> findAllGamesByUserIdInReverse(long id){
 		List<Game> reverse = new ArrayList<>();
-		for(int i = gameRepo.findAll().size(); i > 0; i--) {
-			reverse.add(gameRepo.findAll().get(i-1));
+		for(int i = gameRepo.findAllByUser(id).size(); i > 0; i--) {
+			reverse.add(gameRepo.findAllByUser(id).get(i-1));
 		}
 		return reverse;
 	}
