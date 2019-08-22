@@ -33,8 +33,7 @@ export class PlayGameComponent implements OnInit {
     const user = +this.route.snapshot.paramMap.get('id');
     this.gameService.saveNewGame({id, userChoice , compChoice , compWin , userWin , user } as Game).subscribe();
     this.userChoice = userChoice;
-    this.getPlayedGame();
-    setTimeout(funct => {this.getUser()}, 200);
+    setTimeout(funct => {this.getUser(); this.getPlayedGame()}, 50);
   };
 
   getPlayedGame(){
